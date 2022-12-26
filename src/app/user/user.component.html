@@ -1,3 +1,9 @@
+
+<div class="container">
+  <button class="btn btn-md btn-primary float-right mt-3" (click)="refresh()">
+    refresh
+  </button>
+</div>
 <div class="container my-3 py-3" *ngIf="user.length > 0 ; else nodata">
   <ul class="list-group">
     <li class="list-group-item pb-2" *ngFor="let us of user">{{us.name}}</li>

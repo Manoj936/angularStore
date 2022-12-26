@@ -23,7 +23,6 @@ export class PostsComponent implements OnInit {
     const getAllPosts = this.store.select(getPosts);
 
     combineLatest([isLoaded$ , isLoading$]).subscribe(data => {
-      //console.log(data[0], data[1])
       if (!data[0] && !data[1]) {
         this.store.dispatch(new PostListRequestAction());
         this.httpService.get('posts').subscribe((data) => {

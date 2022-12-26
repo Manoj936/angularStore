@@ -10,6 +10,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { UserComponent } from './user/user.component';
 import { HomeComponent } from './home/home.component';
 import { rootReducer } from './reducers';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +23,8 @@ import { rootReducer } from './reducers';
     BrowserModule,
     HttpClientModule,
     StoreModule.forRoot(rootReducer),
-    AppRoutingModule
+    AppRoutingModule,
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [HttpService],
   bootstrap: [AppComponent]
